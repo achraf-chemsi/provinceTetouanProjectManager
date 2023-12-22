@@ -1,10 +1,8 @@
 package com.province.tetouan.domain;
 
-import jakarta.persistence.Entity;
 
 import java.util.Date;
 
-@Entity
 public class Project {
 
     private Integer id;
