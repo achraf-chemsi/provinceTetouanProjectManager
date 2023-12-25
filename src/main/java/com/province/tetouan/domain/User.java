@@ -1,7 +1,18 @@
 package com.province.tetouan.domain;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
+@Entity
 public class User {
-    private String Name;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Integer id;
+
+    private String name;
 
     private String username;
 
@@ -11,8 +22,9 @@ public class User {
 
     private Integer[] ids_project;
 
-    public User(String name, String username, String password, String[] roles, Integer[] ids_project) {
-        Name = name;
+    public User(Integer id, String name, String username, String password, String[] roles, Integer[] ids_project) {
+        this.id = id;
+        this.name = name;
         this.username = username;
         this.password = password;
         this.roles = roles;
@@ -20,11 +32,11 @@ public class User {
     }
 
     public String getName() {
-        return Name;
+        return name;
     }
 
     public void setName(String name) {
-        Name = name;
+        this.name = name;
     }
 
     public String getUsername() {
@@ -57,5 +69,13 @@ public class User {
 
     public void setIds_project(Integer[] ids_project) {
         this.ids_project = ids_project;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 }

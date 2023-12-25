@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Admin Max | Log in</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <!-- icheck bootstrap -->
+    <link rel="stylesheet" href="plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="dist/css/adminlte.min.css">
+    <!-- Google Font: Source Sans Pro -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+
+
+    <script type="text/javascript">
+        $(function() {
+        setTimeout(function() { $("#flashattribute").fadeOut(1500); }, 1500)
+        $('#btnclick').click(function() {
+        $('#flashattribute').show();
+        setTimeout(function() { $("#flashattribute").fadeOut(1500); }, 1500)
+        })
+        })
+    </script>
+
+
+</head>
+<body class="hold-transition login-page">
+<div class="login-box">
+    <div class="login-logo">
+        <a href="home"><b>Poject</b>Management App</a>
+    </div>
+    <!-- /.login-logo -->
+    <div class="card">
+        <div class="card-body login-card-body">
+            <p class="login-box-msg">Sign in to start your session</p>
+
+
+
+            <div id="flashattribute" style="margin-bottom:32px;color:#4121b5;background-color:#ddcaeb;width:100%;text-align:left;">
+                <div>
+                    <h4 style="height: 55px; padding-top: 15px; padding-left: 20px;" th:text="${msg} ?: 'Welcome'"></h4>
+                </div>
+
+            </div>
+
+
+            <form class="user" th:action="@{${#httpServletRequest.contextPath}/loginPagePost}" method="post">
+
+            <div class="form-group">
+                    <input type="text" class="form-control form-control-user"
+                           id="exampleInputEmail" name="email" aria-describedby="emailHelp"
+                           placeholder="Enter Username..." value="">
+                </div>
+                <div class="form-group">
+                    <input type="password" class="form-control form-control-user"
+                           id="exampleInputPassword" name="password" placeholder="Password" value="">
+                </div>
+                <div class="form-group">
+                    <div class="custom-control custom-checkbox small">
+                        <input type="checkbox" class="custom-control-input" id="customCheck">
+                        <label class="custom-control-label" for="customCheck">Remember
+                            Me</label>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary btn-user btn-block">Submit</button>
+
+                <hr>
+
+            </form>
+
+            <!-- /.social-auth-links -->
+
+            <p class="mb-1">
+            <a href="#">I forgot my password</a>
+        </p>
+            <p class="mb-0">
+                <a href="#" class="text-center">Register a new membership</a>
+            </p>
+
+
+        </div>
+        <!-- /.login-card-body -->
+    </div>
+</div>
+<!-- /.login-box -->
+
+<!-- jQuery -->
+<script src="plugins/jquery/jquery.min.js"></script>
+<!-- Bootstrap 4 -->
+<script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- AdminLTE App -->
+<script src="dist/js/adminlte.min.js"></script>
+
+</body>
+</html>
