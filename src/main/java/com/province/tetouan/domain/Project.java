@@ -44,6 +44,7 @@ public class Project {
     private String[] commune;
 
     public Project(Integer id, Integer num_Project, String object, String responsible, Float price, String type_budget, Date opening_date, String beneficiary, String destination, String state, Date engagement_year, String reference, Date completion_time, Date beginning_service_order, String[] commune) {
+        super();
         this.id = id;
         this.num_Project = num_Project;
         this.object = object;
